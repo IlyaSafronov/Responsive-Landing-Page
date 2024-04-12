@@ -23,7 +23,10 @@ html[data-theme='dark'] {
   --color-body: #494242;
   --color-text: #f3f3f3;
   --btn-cta-shadow: rgba(255, 255, 255, 0.1);
+}
 
+html[data-theme='dark'] * {
+  transition: all 0.3s ease;
 }
 
 body {
@@ -152,10 +155,11 @@ nav {
 
 .hero .hero__intro {
   flex: 1;
+  animation: animateLeft 1s ease ;
 }
 
 .hero .hero__intro h1 {
-  font-size: 3rem;
+  font-size: 4.5rem;
   font-weight: 600;
   margin: 0.5rem 0;
 }
@@ -180,6 +184,32 @@ nav {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  animation: animateRight 1s ease;
+}
+
+@keyframes animateRight {
+  from {
+    opacity: 0.2;
+    transform: translateX(150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes animateLeft {
+  from {
+    opacity: 0.2;
+    transform: translateX(-150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero .hero__photo img {
+  height: 60vh;
 }
 
 /* ! mediaquries */
